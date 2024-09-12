@@ -9,16 +9,20 @@ body {
   color: #333;
 }
 
+header {
+  max-width: 95%;
+  text-align: center;
+}
+
 main {
-  width: 100%;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: auto;
+  width: 90%;
 }
 
 .table-container {
-  background-color: white;
-  padding: 1rem;
-  border-radius: 1rem;
-  margin: auto;
-  width: 90%;
   overflow-x: scroll;
 }
 
@@ -175,4 +179,32 @@ tbody td button:hover {
 
 :is(.addRecordModal, .editStudentModal) form button:hover {
   background-color: rgb(0, 120, 255);
+}
+
+@media screen and (max-width: 640px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  :is(.addRecordModal, .editStudentModal) form :is(input, select) {
+    padding: 0.5rem;
+  }
+  :is(.addRecordModal, .editStudentModal) form button {
+    padding: 0.75rem;
+  }
+
+  main {
+    padding: 0.5rem;
+  }
+
+  .table-heading h2 {
+    font-size: 1.25rem;
+  }
+
+  .table-heading button {
+    padding: 0.75rem;
+  }
+
+  .table-heading button span {
+    display: none;
+  }
 }
