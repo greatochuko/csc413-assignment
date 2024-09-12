@@ -1,0 +1,178 @@
+body {
+  background-color: #e9ecf2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+main {
+  width: 100%;
+}
+
+.table-container {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: auto;
+  width: 90%;
+  overflow-x: scroll;
+}
+
+.table-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.table-heading button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: rgb(0, 140, 255);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 0 6px 2px #eee;
+}
+
+.table-heading button:hover {
+  background-color: rgb(0, 120, 255);
+  transition-duration: 300ms;
+}
+
+table {
+  width: 100%;
+}
+
+tbody {
+  overflow-x: scroll;
+}
+
+tbody tr td:last-child {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+table thead {
+  font-weight: bold;
+}
+
+table tr {
+  display: grid;
+  grid-template-columns:
+    4rem repeat(4, minmax(133px, 1fr)) minmax(84px, 1fr) minmax(72px, 1fr)
+    minmax(112px, 1fr);
+}
+
+table td {
+  border: solid 1px black;
+  padding: 1rem;
+  text-align: center;
+}
+
+tbody td button {
+  padding: 0.25rem;
+  background-color: white;
+  border: solid 1px #eee;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+tbody td button:hover {
+  background-color: #eee;
+  border: solid 1px #ddd;
+  transition-duration: 500ms;
+}
+
+:is(.addRecordModal, .editStudentModal) {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: 300ms;
+}
+
+:is(.addRecordModal, .editStudentModal).show {
+  visibility: visible;
+  opacity: 1;
+}
+
+:is(.addRecordModal, .editStudentModal) form {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 80%;
+  max-width: 640px;
+}
+
+:is(.addRecordModal, .editStudentModal) form h3 {
+  text-align: center;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+:is(.addRecordModal, .editStudentModal) form label {
+  font-size: 1rem;
+}
+
+:is(.addRecordModal, .editStudentModal) form .input-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+:is(.addRecordModal, .editStudentModal) form .input-group div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+:is(.addRecordModal, .editStudentModal) form :is(input, select) {
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border: solid 2px #ddd;
+  font-size: 1rem;
+  outline: none;
+  min-width: 0;
+}
+
+:is(.addRecordModal, .editStudentModal) form input:focus {
+  outline: rgb(0, 140, 255) auto;
+}
+
+:is(.addRecordModal, .editStudentModal) form button {
+  padding: 1rem;
+  background-color: rgb(0, 140, 255);
+  transition-duration: 300ms;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+:is(.addRecordModal, .editStudentModal) form button:hover {
+  background-color: rgb(0, 120, 255);
+}
